@@ -14,7 +14,7 @@ class Game {
     start();
     while (totalTries < 10) {
       System.out.println("Game loop!");
-      //Thread.sleep(1000);
+      // Thread.sleep(1000);
       render();
       analizeInput();
       update();
@@ -29,7 +29,6 @@ class Game {
     int randomNumber = randomGenerator.nextInt(stringArray.length);
     mainWord = stringArray[randomNumber];
 
-
     System.out.println("Game started");
     System.out.println(mainWord);
   }
@@ -40,15 +39,22 @@ class Game {
 
   private void analizeInput() {
     Scanner input = new Scanner(System.in);
-    choosenChar = input.nextChar();
+    String inputText = "";
+    while (inputText.length() > 1 || inputText.length() == 0) {
+      System.out.println("Write a letter!!");
+      inputText = input.next();
+    }
+    choosenChar = inputText.charAt(0);
+    System.out.println("Finished analizing");
   }
 
   private void update() {
-    if (mainWord.contains(choosenChar)) {
-      System.out.println("Yes");
-    } else {
-      System.out.println("No");
-    }
+    // if (true) {
+    //   System.out.println("Yes");
+    // } else {
+    //   System.out.println("No");
+    // }
+    System.out.println("Finished updating");
   }
 
   private void stop() {
